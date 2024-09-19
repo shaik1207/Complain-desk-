@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Complaint</title>
+    
+</head>
+<style>
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    background-color: #007BFF;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: white;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.home-btn {
+    color: white;
+    text-decoration: none;
+    background-color: #0056b3;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+    background-color: #004494;
+}
+
+.form-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+</style>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="navbar-brand">VIT Complaints</div>
+            <a href="/" class="home-btn">Home</a>
+        </div>
+    </nav>
+
+    <div class="form-wrapper">
+        <div class="form-container">
+            <h1>Submit a Complaint</h1>
+            <form action="/submit-complaint" method="POST" id="submitForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="register-no">Register No</label>
+                    <input type="text" id="register-no" name="register-no" placeholder="Your register number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" name="department" required>
+                        <option value="">Select your department</option>
+                        <option value="cse">CSE</option>
+                        <option value="it">IT</option>
+                        <option value="ece">ECE</option>
+                        <option value="eee">EEE</option>
+                        <option value="mech">MECH</option>
+                        <option value="civil">Civil </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="type-of-complaint">Type of Complaint</label>
+                    <input type="text" id="type-of-complaint" name="type-of-complaint"
+                        placeholder="Enter type of complaint" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="complaint">Complaint</label>
+                    <textarea id="complaint" name="complaint" rows="5" placeholder="Describe your complaint"
+                        required></textarea>
+                </div>
+
+                <button type="submit" id="submitButton">Submit Complaint</button>
+            </form>
+        </div>
+    </div>
+
+  
+</body>
+
+</html>
