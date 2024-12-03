@@ -17,13 +17,13 @@ app.use(express.json());
 
 app.set('view engine', 'ejs');
 app.use(session({
-    secret: "Deepu",
+    secret: "Sameer",
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }
 }))
 
-const url = 'mongodb+srv://DeepthiSri:deepu0405@cluster0.c0ewm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const url = 'mongodb+srv://sameer:sameer0407@cluster0.3m6v1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 const dbName = 'complaintsDB';
 let db;
 
@@ -154,8 +154,7 @@ app.post('/liked',  async (req, res) => {
     
     const complaintsCollection = db.collection('complaints');
     await complaintsCollection.updateOne({ _id: new ObjectId(like) }, { $inc: { likes: 1 } })
-    complaints.likes = complaints.likes + 1;
-    console.log(complaints)
+    
     res.redirect('/')
 })
 

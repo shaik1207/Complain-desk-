@@ -136,7 +136,7 @@ button:disabled {
 <body>
     <nav>
         <div class="navbar">
-            <div class="navbar-brand">VIT Complaints</div>
+            <div class="navbar-brand"> Complaints</div>
             <a href="/" class="home-btn">Home</a>
         </div>
     </nav>
@@ -180,12 +180,17 @@ button:disabled {
                         required></textarea>
                 </div>
 
-                <button type="submit" id="submitButton">Submit Complaint</button>
+                <button type="submit" id="submitButton" >Submit Complaint</button>
             </form>
         </div>
     </div>
 
   
 </body>
+<script>
+    document.getElementById("submitForm").onsubmit = event => {
+        alert("Form submitted successfully");
+    }
+</script>
 
 </html>
